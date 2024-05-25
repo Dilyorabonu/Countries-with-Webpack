@@ -6,3 +6,5 @@ getData('dilyora')
 console.log(numbers);
 
 console.log('APP JS');
+
+console.log("WEbpack dev server is working");
