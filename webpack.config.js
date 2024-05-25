@@ -4,36 +4,38 @@ const { abort } = require("process");
 
 module.exports = {
   //mode
-  mode: "production", //development
+  mode: "development", //production
   //entry
   entry: {
-    app: path.resolve(__dirname, "./src/app.js"),
-    about: path.resolve(__dirname, "./src/about.js"),
+    main: path.resolve(__dirname, "src/js/main.js"),
+    about: path.resolve(__dirname, "src/js/about.js"),
   },
   //output
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "[name].js",
+    filename: "[name][contenthash].js",
+    clean: true,
   },
   //plugins
   plugins: [
     new HtmlWebpackPlugin({
       //title
-      title: "Webpack 5 ✅",
+      title: "Countries | Home",
       //filename
       filename: "index.html",
       //template
-      template: "./src/temp.html",
+      template: "./src/pages/indexTemp.html",
       //chunks
-      chunks: ["app"],
+      chunks: ["main"],
     }),
+
     new HtmlWebpackPlugin({
       //title
-      title: "About",
+      title: "Countries | About",
       //filename
       filename: "about.html",
       //template
-      template: "./src/tempAbout.html",
+      template: "./src/pages/aboutTemp.html",
       //chunks
       chunks: ["about"],
     }),
@@ -59,9 +61,9 @@ module.exports = {
     ],
   },
   //devserver
-  devServer : {
+  devServer: {
     static: {
-      directory: path.resolve(__dirname, 'public'),
+      directory: path.resolve(__dirname, "public"),
     },
     port: 3000,
     open: true,
