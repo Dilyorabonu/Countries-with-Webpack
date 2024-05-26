@@ -1,9 +1,18 @@
-const request = async(resource) => {
-    console.log('loading...');
-    const req = await fetch(resource)
-    const data = await req.json()
-    console.log('Done !');
-    return data
-}
+import loaderToggle from "./loader";
 
-export default request
+const request = async (resource) => {
+  loaderToggle(true);
+  const req = await fetch(resource);
+
+  if (req.ok) {
+    loaderToggle(false);
+    throw new Error("Something went wrong");
+  }
+
+  const data = await req.json();
+  loaderToggle(false);
+
+  return data;
+};
+
+export default request;
