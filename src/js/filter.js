@@ -1,5 +1,3 @@
-import { createCountries } from "./updateUI";
-
 const searchForEl = document.querySelector(".search");
 
 searchForEl.search.addEventListener("input", () => {
