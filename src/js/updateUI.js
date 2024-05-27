@@ -46,7 +46,7 @@ export const createCountryInfo = (county) => {
     tld,
     currencies,
     languages,
-    subregion
+    subregion,
   } = country;
 
   const nativeName = Object.values(name.nativeName)[0].official;
@@ -67,7 +67,7 @@ export const createCountryInfo = (county) => {
   <ul class="country-info__list">
     <li class="country-info__item">
       <p class="name">
-        Native Name
+        Native Name:
         <span>${nativeName}</span>
       </p>
       <p class="population">
@@ -105,15 +105,15 @@ export const createCountryInfo = (county) => {
 
   <div class="country-info__borders">
     <h3>Border Countries:</h3>
-    <a href="#">France</a>
-    <a href="#">Belgium</a>
-    <a href="#">Netherlands</a>
-    <a href="#">Denmark</a>
-    <a href="#">Poland</a>
-    <a href="#">Szech</a>
-    <a href="#">Austria</a>
-    <a href="#">Switzerland</a>
-    <a href="#">Luxembourg</a>
+    ${
+      borders
+        ? borders.map((border) => {
+            return `
+      <a href="./about.html?country=/alpha/${border}">${border}</a>
+      `;
+          })
+        : "No Borders"
+    }
   </div>
 </div>
 `;
