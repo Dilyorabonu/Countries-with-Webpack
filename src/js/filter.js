@@ -27,7 +27,7 @@ searchSelect.forEach((li) => {
     if (li.textContent == "All") {
       filterAPI = "https://restcountries.com/v3.1/all";
     } else {
-      filterAPI = `https://restcountries.com/v3.1/region${li.textContent}`;
+      filterAPI = `https://restcountries.com/v3.1/region/${li.textContent}`;
     }
 
     request(filterAPI)
