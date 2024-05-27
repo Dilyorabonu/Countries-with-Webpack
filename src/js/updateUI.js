@@ -13,7 +13,7 @@ export const createCountries = (countries) => {
     const li = document.createElement("li");
     li.classList.add("cards__item");
     li.innerHTML = `
-    <a href="./about.html?county=${commonName}">
+    <a href="./about.html?county=/name/${commonName}">
         <img
           src=${flag}
           alt="germany-flag"
