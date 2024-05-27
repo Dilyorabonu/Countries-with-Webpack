@@ -1,14 +1,14 @@
-const searchForEl = document.querySelector(".search");
+const searchFormEl = document.querySelector(".search");
 
-searchForEl.search.addEventListener("input", () => {
-  const searchValue = searchForEl.search.value.toLowerCase();
+searchFormEl.search.addEventListener("input", () => {
+  const searchValue = searchFormEl.search.value.toLowerCase();
   const cardsItem = document.querySelectorAll(".cards__item");
   const cardsTitles = document.querySelectorAll(".cards__title");
   cardsTitles.forEach((title, i) => {
     if (title.textContent.toLowerCase().includes(searchValue)) {
-      cardsItem(i).style.display = "block";
+      cardsItem[i].style.display = "block";
     } else {
-      cardsItem(i).style.display = "none";
+      cardsItem[i].style.display = "none";
     }
   });
 });

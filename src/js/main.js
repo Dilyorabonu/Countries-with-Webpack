@@ -5,8 +5,6 @@ import { createCountries } from "./updateUI";
 import "./filter";
 import "./mode";
 
-console.log("hello world");
-
 const API = "https://restcountries.com/v3.1/all";
 
 request(API)

@@ -1,11 +1,11 @@
-const loaderEl = document.querySelector('.loader');
+const loaderEl = document.querySelector('.loader')
 
-function loaderToggle(info) {
+const loaderToggle = (info) => {
     if (info) {
-        loaderEl.classList.remove('hidden');
+        loaderEl.classList.remove('hidden')
     } else {
-        loaderEl.classList.add('hidden');
+        loaderEl.classList.add('hidden')
     }
 }
 
-export default loaderToggle;
+export default loaderToggle

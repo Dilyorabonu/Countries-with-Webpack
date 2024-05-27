@@ -1,18 +1,14 @@
-import loaderToggle from "./loader";
+import loaderToggler from "./loader";
 
-const request = async (resource) => {
-  loaderToggle(true);
-  const req = await fetch(resource);
-  console.log(req);
-
+const request = async (reource) => {
+  loaderToggler(true);
+  const req = await fetch(reource);
   if (!req.ok) {
-    loaderToggle(false);
-    throw new Error("Something went wrong");
+    loaderToggler(false);
+    throw new Error("Something went wrong :(");
   }
-
   const data = await req.json();
-  loaderToggle(false);
-
+  loaderToggler(false);
   return data;
 };
 
