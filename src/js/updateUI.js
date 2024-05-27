@@ -3,7 +3,6 @@ const cardsEl = document.querySelector(".cards");
 export const createCountries = (countries) => {
   cardsEl.innerHTML = "";
   countries.forEach((country) => {
-    console.log(country);
     const commonName = country.name.common;
     const population = country.population;
     const region = country.region;
@@ -13,7 +12,7 @@ export const createCountries = (countries) => {
     const li = document.createElement("li");
     li.classList.add("cards__item");
     li.innerHTML = `
-    <a href="./about.html?county=/name/${commonName}">
+    <a href="./about.html?country=/name/${commonName}">
         <img
           src=${flag}
           alt="germany-flag"
@@ -33,9 +32,9 @@ export const createCountries = (countries) => {
   });
 };
 
-const countryInfoEl = document.querySelector("county-info");
+const countryInfoEl = document.querySelector(".country-info");
 
-export const createCountryInfo = (county) => {
+export const createCountryInfo = (country) => {
   const {
     population,
     borders,
@@ -54,7 +53,6 @@ export const createCountryInfo = (county) => {
   const language = Object.values(languages);
 
   countryInfoEl.innerHTML = `
-  
   <img
   class="country-info__img"
   src=${flags.svg}
