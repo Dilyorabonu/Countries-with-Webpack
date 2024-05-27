@@ -3,8 +3,8 @@ const searchForEl = document.querySelector(".search");
 searchForEl.search.addEventListener("input", () => {
   const searchValue = searchForEl.search.value.toLowerCase();
   const cardsItem = document.querySelectorAll(".cards__item");
-  const cardsTitle = document.querySelectorAll(".cards__title");
-  cardsTitle.forEach((title, i) => {
+  const cardsTitles = document.querySelectorAll(".cards__title");
+  cardsTitles.forEach((title, i) => {
     if (title.textContent.toLowerCase().includes(searchValue)) {
       cardsItem(i).style.display = "block";
     } else {
@@ -13,11 +13,11 @@ searchForEl.search.addEventListener("input", () => {
   });
 });
 
-import { createCountries } from "./updateUI";
-import request from "./request";
-
 const searchSelect = document.querySelectorAll(".search__select-list li");
 const searchSelectSpan = document.querySelector(".search__select span");
+
+import { createCountries } from "./updateUI";
+import request from "./request";
 
 searchSelect.forEach((li) => {
   li.addEventListener("click", () => {
